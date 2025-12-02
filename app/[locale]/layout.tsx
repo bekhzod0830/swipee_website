@@ -7,6 +7,29 @@ import '../globals.css';
 export const metadata: Metadata = {
   title: 'swipee - Discover Your Style',
   description: 'Find perfect outfits with AI-powered visual search and personalized recommendations',
+  metadataBase: new URL('https://swipee.net'),
+  openGraph: {
+    title: 'swipee - Discover Your Style',
+    description: 'Find perfect outfits with AI-powered visual search and personalized recommendations',
+    url: 'https://swipee.net',
+    siteName: 'swipee',
+    images: [
+      {
+        url: '/key_point_images/swipe_discovery.png',
+        width: 1200,
+        height: 630,
+        alt: 'swipee - AI-powered fashion discovery',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'swipee - Discover Your Style',
+    description: 'Find perfect outfits with AI-powered visual search and personalized recommendations',
+    images: ['/key_point_images/swipe_discovery.png'],
+  },
 };
 
 const locales = ['ru', 'en', 'uz'];
