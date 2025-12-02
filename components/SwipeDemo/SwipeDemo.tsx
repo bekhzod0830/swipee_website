@@ -2,45 +2,38 @@
 
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 
 const MOCK_PRODUCTS = [
   { 
     id: 1, 
-    name: 'Elegant Black Dress', 
-    price: '$89', 
-    image: 'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=600&fit=crop&auto=format',
-    brand: 'Modest Fashion Co.'
+    name: 'Soft Academia', 
+    price: '350 000 UZS', 
+    image: '/swipe_demo/demo1.png',
+    brand: 'Swipee Collection'
   },
   { 
     id: 2, 
-    name: 'White Hijab Set', 
-    price: '$65', 
-    image: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=400&h=600&fit=crop&auto=format',
-    brand: 'Elegance'
+    name: 'Soft Street', 
+    price: '599 000 UZS', 
+    image: '/swipe_demo/demo2.png',
+    brand: 'Swipee Collection'
   },
   { 
     id: 3, 
-    name: 'Modest Abaya', 
-    price: '$120', 
-    image: 'https://images.unsplash.com/photo-1490481651871-ab68de25977d?w=400&h=600&fit=crop&auto=format',
-    brand: 'Islamic Wear'
+    name: 'Denim Focus', 
+    price: '780 000 UZS', 
+    image: '/swipe_demo/demo3.png',
+    brand: 'Swipee Collection'
   },
   { 
     id: 4, 
-    name: 'Summer Maxi Dress', 
-    price: '$75', 
-    image: 'https://images.unsplash.com/photo-1583391733956-6c78276477e5?w=400&h=600&fit=crop&auto=format',
-    brand: 'Modern Modest'
-  },
-  { 
-    id: 5, 
-    name: 'Casual Tunic', 
-    price: '$55', 
-    image: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&h=600&fit=crop&auto=format',
-    brand: 'Everyday Wear'
+    name: 'Desert Calm', 
+    price: '679 000 UZS', 
+    image: '/swipe_demo/demo4.png',
+    brand: 'Swipee Collection'
   },
 ];
 
@@ -50,6 +43,8 @@ export default function SwipeDemo() {
   const [cards] = useState(MOCK_PRODUCTS);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
+  const [triggerSwipe, setTriggerSwipe] = useState<'left' | 'right' | null>(null);
+  const swipeCountRef = useRef(0);
 
   // Only run animations on client side
   useEffect(() => {
@@ -62,25 +57,27 @@ export default function SwipeDemo() {
 
     // Reset and start auto-swipe
     setCurrentIndex(0);
+    setTriggerSwipe(null);
+    swipeCountRef.current = 0;
     
     const autoSwipeInterval = setInterval(() => {
-      setCurrentIndex(prev => {
-        if (prev >= cards.length - 1) {
-          return 0; // Loop back to start
-        }
-        return prev + 1;
-      });
-    }, 2500); // Swipe every 2.5 seconds
+      setTriggerSwipe('right');
+      
+      setTimeout(() => {
+        setTriggerSwipe(null);
+        setCurrentIndex(current => (current + 1) % cards.length);
+      }, 700);
+    }, 3000); // Swipe every 3 seconds
 
     return () => clearInterval(autoSwipeInterval);
   }, [inView, cards.length]);
 
   const handleSwipe = (direction: 'left' | 'right' | 'up') => {
-    if (currentIndex >= cards.length) return;
-    
+    // Manual swipe - update index after animation
     setTimeout(() => {
-      setCurrentIndex(prev => prev + 1);
-    }, 300);
+      setCurrentIndex(prev => (prev + 1) % cards.length);
+      setTriggerSwipe(null);
+    }, 600);
   };
 
   const handleUndo = () => {
@@ -93,19 +90,47 @@ export default function SwipeDemo() {
   };
 
   return (
-    <section id="demo" ref={ref} className="py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="demo" ref={ref} className="py-32 bg-gray-50 relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: 'linear',
+          }}
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1.2, 1, 1.2],
+            rotate: [360, 180, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: 'linear',
+          }}
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 px-4"
         >
-          <h2 className="text-5xl md:text-7xl font-bold mb-6 text-black">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 text-black">
             {t('title')}
           </h2>
-          <p className="text-xl text-gray-600">{t('subtitle')}</p>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600">{t('subtitle')}</p>
         </motion.div>
 
         {/* iPhone Mockup */}
@@ -180,9 +205,9 @@ export default function SwipeDemo() {
           {/* Device */}
           <div className="relative">
             {/* iPhone Frame */}
-            <div className="relative w-[375px] h-[812px] bg-black rounded-[60px] shadow-2xl border-[14px] border-black overflow-hidden">
+            <div className="relative w-[320px] h-[693px] bg-black rounded-[50px] shadow-2xl border-[12px] border-black overflow-hidden">
               {/* Notch */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-7 bg-black rounded-b-3xl z-50" />
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-black rounded-b-3xl z-50" />
               
               {/* Screen */}
               <div className="relative w-full h-full bg-gray-50 overflow-hidden">
@@ -211,16 +236,21 @@ export default function SwipeDemo() {
                 {/* Swipe Cards Area */}
                 <div className="absolute top-[115px] left-0 right-0 bottom-[180px] flex items-center justify-center px-4">
                   <div className="relative w-full h-full max-w-[340px]">
-                    {cards.slice(currentIndex, currentIndex + 3).map((product, index) => (
-                      <SwipeCard
-                        key={`${product.id}-${currentIndex + index}`}
-                        product={product}
-                        index={index}
-                        isTopCard={index === 0}
-                        onSwipe={handleSwipe}
-                        shouldPlayHint={inView}
-                      />
-                    ))}
+                    {[0, 1, 2].map((offset) => {
+                      const cardIndex = (currentIndex + offset) % cards.length;
+                      const product = cards[cardIndex];
+                      return (
+                        <SwipeCard
+                          key={`${product.id}-${currentIndex}-${offset}`}
+                          product={product}
+                          index={offset}
+                          isTopCard={offset === 0}
+                          onSwipe={handleSwipe}
+                          shouldPlayHint={inView}
+                          triggerSwipe={offset === 0 ? triggerSwipe : null}
+                        />
+                      );
+                    })}
 
                     {/* Empty State - Hidden during auto-play */}
                     {currentIndex >= cards.length && !inView && (
@@ -330,9 +360,10 @@ interface SwipeCardProps {
   isTopCard: boolean;
   onSwipe: (direction: 'left' | 'right' | 'up') => void;
   shouldPlayHint: boolean;
+  triggerSwipe: 'left' | 'right' | null;
 }
 
-function SwipeCard({ product, index, isTopCard, onSwipe, shouldPlayHint }: SwipeCardProps) {
+function SwipeCard({ product, index, isTopCard, onSwipe, shouldPlayHint, triggerSwipe }: SwipeCardProps) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const rotate = useTransform(x, [-200, 200], [-15, 15]);
@@ -344,6 +375,30 @@ function SwipeCard({ product, index, isTopCard, onSwipe, shouldPlayHint }: Swipe
   const cartOpacity = useTransform(y, [-150, -50], [1, 0]);
 
   const [hasPlayedHint, setHasPlayedHint] = useState(false);
+  const [hasTriggered, setHasTriggered] = useState(false);
+
+  // Reset hasTriggered when triggerSwipe changes or card position changes
+  useEffect(() => {
+    setHasTriggered(false);
+  }, [triggerSwipe, index]);
+
+  // Trigger auto-swipe animation
+  useEffect(() => {
+    if (triggerSwipe && isTopCard && !hasTriggered) {
+      setHasTriggered(true);
+      
+      const targetX = triggerSwipe === 'right' ? 500 : -500;
+      const targetRotate = triggerSwipe === 'right' ? 20 : -20;
+      
+      // Reset position first
+      x.set(0);
+      y.set(0);
+      
+      // Then animate to target
+      animate(x, targetX, { duration: 0.6, ease: "easeOut" });
+      animate(rotate, targetRotate, { duration: 0.6, ease: "easeOut" });
+    }
+  }, [triggerSwipe, isTopCard, hasTriggered, x, y, rotate]);
 
   // Play shake animation when shouldPlayHint becomes true
   useEffect(() => {
@@ -369,12 +424,18 @@ function SwipeCard({ product, index, isTopCard, onSwipe, shouldPlayHint }: Swipe
 
     // Check vertical swipe first (up for cart)
     if (info.offset.y < -swipeThresholdY) {
+      animate(y, -500, { duration: 0.5, ease: "easeOut" });
+      animate(rotate, 10, { duration: 0.5 });
       onSwipe('up');
     }
     // Check horizontal swipes
     else if (info.offset.x > swipeThresholdX) {
+      animate(x, 500, { duration: 0.5, ease: "easeOut" });
+      animate(rotate, 20, { duration: 0.5 });
       onSwipe('right');
     } else if (info.offset.x < -swipeThresholdX) {
+      animate(x, -500, { duration: 0.5, ease: "easeOut" });
+      animate(rotate, -20, { duration: 0.5 });
       onSwipe('left');
     }
   };
@@ -396,6 +457,13 @@ function SwipeCard({ product, index, isTopCard, onSwipe, shouldPlayHint }: Swipe
         scale: 1 - index * 0.05,
         y: index * 10,
         opacity: 1 - index * 0.3,
+      }}
+      exit={{
+        x: 0,
+        y: 0,
+        opacity: 0,
+        scale: 0.8,
+        transition: { duration: 0.3 }
       }}
       onAnimationComplete={() => {
         if (isTopCard && !hasPlayedHint && shouldPlayHint) {

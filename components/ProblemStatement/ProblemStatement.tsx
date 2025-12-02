@@ -28,56 +28,44 @@ export default function ProblemStatement() {
   ];
 
   return (
-    <section ref={ref} className="py-40 bg-black text-white">
+    <section ref={ref} className="py-20 sm:py-28 md:py-40 bg-black">
       <div className="max-w-7xl mx-auto px-6">
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-5xl md:text-7xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 px-4 text-white">
             {t('title')}
           </h2>
-          <p className="text-xl text-gray-400">{t('subtitle')}</p>
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 px-4">{t('subtitle')}</p>
         </motion.div>
 
         {/* Pain Points */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {painPoints.map((point, index) => (
             <motion.div
               key={point.key}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
-              className="text-center"
+              className="text-center px-4"
             >
-              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
+              <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden">
                 <Image
                   src={point.image}
                   alt={t(point.key as any)}
                   fill
                   className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                  sizes="192px"
+                  sizes="(max-width: 640px) 144px, (max-width: 768px) 176px, 192px"
                 />
               </div>
-              <p className="text-lg">{t(point.key as any)}</p>
+              <p className="text-base sm:text-lg text-white">{t(point.key as any)}</p>
             </motion.div>
           ))}
         </div>
-
-        {/* Solution CTA */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center"
-        >
-          <div className="inline-block px-8 py-4 bg-white text-black text-2xl font-bold rounded-full">
-            {t('solution')} ✨
-          </div>
-        </motion.div>
       </div>
     </section>
   );

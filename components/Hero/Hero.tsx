@@ -24,7 +24,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-gray-50"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-gray-50 pt-20"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -55,7 +55,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-6xl md:text-8xl font-bold tracking-tight mb-6 mt-[50px]"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight mb-4 sm:mb-6 mt-0 sm:mt-[100px] px-4"
         >
           {t('title')}
         </motion.h1>
@@ -65,7 +65,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto px-4"
         >
           {t('subtitle')}
         </motion.p>
@@ -75,17 +75,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4"
         >
           <a
             href="#waitlist"
-            className="px-8 py-4 bg-black text-white text-lg font-medium rounded-full hover:bg-gray-800 transition-all transform hover:scale-105"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-black text-white text-base sm:text-lg font-medium rounded-full hover:bg-gray-800 transition-all transform hover:scale-105 text-center"
           >
             {t('cta')}
           </a>
           <a
             href="#demo"
-            className="px-8 py-4 bg-white text-black text-lg font-medium rounded-full border-2 border-black hover:bg-gray-50 transition-all transform hover:scale-105"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white text-black text-base sm:text-lg font-medium rounded-full border-2 border-black hover:bg-gray-50 transition-all transform hover:scale-105 text-center"
           >
             {t('watchDemo')}
           </a>
@@ -96,9 +96,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="mt-20 relative"
+          className="mt-12 sm:mt-16 md:mt-20 relative px-4"
         >
-          <div className="grid grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-3xl mx-auto">
             {[1, 2, 3].map((i) => (
               <motion.div
                 key={i}
@@ -130,26 +130,6 @@ export default function Hero() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
-      </motion.div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-black rounded-full flex justify-center"
-        >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1.5 h-1.5 bg-black rounded-full mt-2"
-          />
         </motion.div>
       </motion.div>
     </section>

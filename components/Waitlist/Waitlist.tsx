@@ -26,7 +26,7 @@ export default function Waitlist() {
   };
 
   return (
-    <section id="waitlist" ref={ref} className="py-32 bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
+    <section id="waitlist" ref={ref} className="py-32 bg-gray-50 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <motion.div
@@ -39,7 +39,7 @@ export default function Waitlist() {
             repeat: Infinity,
             ease: 'linear',
           }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -51,7 +51,7 @@ export default function Waitlist() {
             repeat: Infinity,
             ease: 'linear',
           }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl"
         />
       </div>
 
@@ -60,13 +60,13 @@ export default function Waitlist() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center"
+          className="text-center px-4"
         >
           {/* Title */}
-          <h2 className="text-5xl md:text-7xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 text-black">
             {t('title')}
           </h2>
-          <p className="text-xl text-gray-300 mb-12">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-12">
             {t('subtitle')}
           </p>
 
@@ -85,40 +85,40 @@ export default function Waitlist() {
                 className="p-6 bg-green-500/20 border border-green-500 rounded-2xl"
               >
                 <div className="text-4xl mb-2">✓</div>
-                <p className="text-lg font-semibold">{t('success')}</p>
+                <p className="text-lg font-semibold text-green-700">{t('success')}</p>
               </motion.div>
             ) : (
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3 sm:gap-4">
                 <input
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder={t('namePlaceholder')}
                   required
-                  className="w-full px-6 py-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-white/40 transition-colors"
+                  className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-white border border-gray-300 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:border-black transition-colors text-sm sm:text-base"
                 />
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <input
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder={t('phonePlaceholder')}
                     required
-                    className="flex-1 px-6 py-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-white/40 transition-colors"
+                    className="flex-1 px-4 sm:px-6 py-3 sm:py-4 bg-white border border-gray-300 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:border-black transition-colors text-sm sm:text-base"
                   />
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     type="submit"
                     disabled={status === 'loading'}
-                    className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                    className="px-6 sm:px-8 py-3 sm:py-4 bg-black text-white font-semibold rounded-full hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap text-sm sm:text-base"
                   >
                     {status === 'loading' ? (
                       <span className="flex items-center gap-2">
                         <motion.div
                           animate={{ rotate: 360 }}
                           transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                          className="w-5 h-5 border-2 border-black border-t-transparent rounded-full"
+                          className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
                         />
                         Loading...
                       </span>
@@ -130,16 +130,6 @@ export default function Waitlist() {
               </div>
             )}
           </motion.form>
-
-          {/* Additional Info */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-8 text-sm text-gray-400"
-          >
-            Join <span className="font-semibold text-white">1,000+</span> fashion enthusiasts waiting for early access
-          </motion.p>
         </motion.div>
       </div>
     </section>

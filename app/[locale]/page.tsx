@@ -13,10 +13,10 @@ export default function HomePage() {
     <main className="relative">
       <Navigation />
       <Hero />
-      <ProblemStatement />
-      <Features />
       <SwipeDemo />
+      <ProblemStatement />
       <VisualSearchDemo />
+      <Features />
       <HowItWorks />
       <Waitlist />
       <Footer />
