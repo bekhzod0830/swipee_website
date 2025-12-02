@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "features": "Imkoniyatlar",
+    "howItWorks": "Qanday Ishlaydi",
+    "waitlist": "Kutish Ro'yxati"
+  },
+  "hero": {
+    "title": "O'z Stilingizni Kashf Eting",
+    "subtitle": "AI-qidiruv va shaxsiy tavsiyalar yordamida ideal kiyimlarni toping",
+    "cta": "Kutish Ro'yxatiga Qo'shilish",
+    "watchDemo": "Demo Ko'rish"
+  },
+  "problem": {
+    "title": "Kiyim Qidirishga Soatlab Vaqt Sarflaysizmi?",
+    "subtitle": "Biz bu his-tuyg'uni bilamiz",
+    "pain1": "Haftasiga 3-5 soat qidiruv",
+    "pain2": "Minglab mahsulot, lekin hech narsa mos kelmaydi",
+    "pain3": "Yoqqanini topib bo'lmaydi",
+    "solution": "Swipee buni hal qiladi"
+  },
+  "features": {
+    "title": "Aqlli Xarid Yangi Darajada",
+    "subtitle": "O'yinni o'zgartiradigan texnologiya",
+    "visualSearch": {
+      "title": "AI Vizual Qidiruv",
+      "description": "Rasm yuklang — GPT-4 Vision yordamida 3-5 soniyada topib bering"
+    },
+    "swipeDiscovery": {
+      "title": "Svayplab Kashf Eting",
+      "description": "Tinder kabi mahsulotlarni aylantiring — qiziqarli, tez, shaxsiy"
+    },
+    "modestFashion": {
+      "title": "Kamtarin Moda",
+      "description": "Hijob filtrlari, yopilish darajalari va siz uchun yaratilgan uslublar"
+    },
+    "smartRecommendations": {
+      "title": "Aqlli Tavsiyalar",
+      "description": "ML-algoritmlar sizning uslubingizni o'rganadi va faqat yoqadigan narsalarni ko'rsatadi"
+    }
+  },
+  "visualSearchDemo": {
+    "title": "Vizual Qidiruvni Sinab Ko'ring",
+    "subtitle": "Har qanday kiyim rasmini yuklang",
+    "upload": "Rasm Yuklash",
+    "searching": "Qidirilmoqda...",
+    "resultsFound": "{count} ta o'xshash mahsulot topildi"
+  },
+  "swipeDemo": {
+    "title": "Svayp. Kashf Et. Xarid Qil.",
+    "subtitle": "O'ngga svayp — yoqdi, chapga — yo'q. Xarid qilish hech qachon bunchalik oson bo'lmagan."
+  },
+  "howItWorks": {
+    "title": "Qanday Ishlaydi",
+    "step1": {
+      "title": "Ro'yxatdan O'ting",
+      "description": "30 soniyada akkaunt yarating"
+    },
+    "step2": {
+      "title": "Uslubni Tanlang",
+      "description": "Afzalliklaringizni ayting"
+    },
+    "step3": {
+      "title": "Mahsulotlarni Aylantiring",
+      "description": "Shaxsiy tavsiyalarni ko'ring"
+    },
+    "step4": {
+      "title": "AI-Qidiruvdan Foydalaning",
+      "description": "Rasm yuklang — mahsulotni toping"
+    },
+    "step5": {
+      "title": "Xarid Qiling",
+      "description": "Bir bosishda buyurtma bering"
+    }
+  },
+  "stats": {
+    "searchTime": "3-5 son",
+    "searchTimeLabel": "AI-qidiruv",
+    "timesSaved": "80%",
+    "timesSavedLabel": "vaqt tejash",
+    "accuracy": "95%",
+    "accuracyLabel": "mos kelish aniqligi"
+  },
+  "waitlist": {
+    "title": "Birinchilardan Bo'ling",
+    "subtitle": "Kutish ro'yxatiga qo'shiling va erta kirish huquqini oling",
+    "namePlaceholder": "Ismingiz",
+    "phonePlaceholder": "Telefon raqamingiz",
+    "submit": "Qo'shilish",
+    "success": "Rahmat! Tez orada aloqaga chiqamiz",
+    "error": "Xatolik yuz berdi. Qayta urinib ko'ring"
+  },
+  "footer": {
+    "tagline": "O'z Stilingizni Kashf Eting",
+    "product": "Mahsulot",
+    "features": "Imkoniyatlar",
+    "howItWorks": "Qanday Ishlaydi",
+    "pricing": "Narxlar",
+    "company": "Kompaniya",
+    "about": "Biz Haqimizda",
+    "careers": "Karyera",
+    "contact": "Aloqa",
+    "legal": "Huquqiy",
+    "privacy": "Maxfiylik",
+    "terms": "Shartlar",
+    "allRightsReserved": "© 2025 Swipee. Barcha huquqlar himoyalangan."
+  }
+}

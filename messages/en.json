@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "waitlist": "Waitlist"
+  },
+  "hero": {
+    "title": "Discover Your Style",
+    "subtitle": "Find perfect outfits with AI-powered visual search and personalized recommendations",
+    "cta": "Join Waitlist",
+    "watchDemo": "Watch Demo"
+  },
+  "problem": {
+    "title": "Spending Hours Searching for Clothes?",
+    "subtitle": "We know the feeling",
+    "pain1": "3-5 hours weekly browsing",
+    "pain2": "Thousands of items, nothing fits",
+    "pain3": "Missing out on what you loved",
+    "solution": "Swipee solves this"
+  },
+  "features": {
+    "title": "Smart Shopping Reimagined",
+    "subtitle": "Technology that changes the game",
+    "visualSearch": {
+      "title": "AI Visual Search",
+      "description": "Upload a photo — find the exact item in 3-5 seconds with GPT-4 Vision"
+    },
+    "swipeDiscovery": {
+      "title": "Swipe Discovery",
+      "description": "Swipe through products like Tinder — fun, fast, personalized"
+    },
+    "modestFashion": {
+      "title": "Modest Fashion",
+      "description": "Hijab filters, coverage levels, and styles designed for you"
+    },
+    "smartRecommendations": {
+      "title": "Smart Recommendations",
+      "description": "ML algorithms learn your style and show only what you'll love"
+    }
+  },
+  "visualSearchDemo": {
+    "title": "Try Visual Search",
+    "subtitle": "Upload any clothing photo",
+    "upload": "Upload Photo",
+    "searching": "Searching...",
+    "resultsFound": "Found {count} similar items"
+  },
+  "swipeDemo": {
+    "title": "Swipe. Discover. Buy.",
+    "subtitle": "Swipe right to like, left to pass. Shopping has never been this simple."
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "step1": {
+      "title": "Sign Up",
+      "description": "Create account in 30 seconds"
+    },
+    "step2": {
+      "title": "Choose Style",
+      "description": "Tell us your preferences"
+    },
+    "step3": {
+      "title": "Swipe Products",
+      "description": "Browse personalized picks"
+    },
+    "step4": {
+      "title": "Use AI Search",
+      "description": "Upload photo — find item"
+    },
+    "step5": {
+      "title": "Shop",
+      "description": "Checkout with one click"
+    }
+  },
+  "stats": {
+    "searchTime": "3-5 sec",
+    "searchTimeLabel": "AI search",
+    "timesSaved": "80%",
+    "timesSavedLabel": "time saved",
+    "accuracy": "95%",
+    "accuracyLabel": "match accuracy"
+  },
+  "waitlist": {
+    "title": "Be the First",
+    "subtitle": "Join the waitlist and get early access",
+    "namePlaceholder": "Your name",
+    "phonePlaceholder": "Your phone number",
+    "submit": "Join Now",
+    "success": "Thanks! We'll be in touch soon",
+    "error": "Something went wrong. Please try again"
+  },
+  "footer": {
+    "tagline": "Discover Your Style",
+    "product": "Product",
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "company": "Company",
+    "about": "About",
+    "careers": "Careers",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "allRightsReserved": "© 2025 Swipee. All rights reserved."
+  }
+}

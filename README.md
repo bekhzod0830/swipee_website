@@ -1,36 +1,179 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Swipee Website
 
-## Getting Started
+A stunning, Apple-inspired landing page for the Swipee mobile application. Built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## 🚀 Features
+
+- **Apple-style animations** - Smooth scroll effects, parallax, and micro-interactions
+- **Interactive Swipe Demo** - Tinder-like card swiping experience
+- **Visual Search Demo** - AI-powered image search showcase
+- **Multi-language Support** - Russian (default), English, and Uzbek
+- **Fully Responsive** - Mobile-first design
+- **Performance Optimized** - Fast loading with Next.js 14 App Router
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **i18n**: next-intl
+- **Icons**: Lottie (optional)
+
+## 📁 Project Structure
+
+```
+swipee_website/
+├── app/
+│   ├── [locale]/           # Locale-based routing
+│   │   ├── layout.tsx
+│   │   └── page.tsx        # Main landing page
+│   ├── globals.css
+│   └── layout.tsx
+├── components/
+│   ├── Hero/               # Hero section with animations
+│   ├── Navigation/         # Sticky navigation
+│   ├── ProblemStatement/   # Problem/solution section
+│   ├── Features/           # 4 key features grid
+│   ├── SwipeDemo/          # Interactive swipe cards
+│   ├── VisualSearchDemo/   # AI search demo
+│   ├── HowItWorks/         # 5-step journey
+│   ├── Waitlist/           # Email collection
+│   └── Footer/             # Footer with links
+├── lib/
+│   ├── i18n.ts            # i18n configuration
+│   └── utils/
+├── messages/              # Translation files
+│   ├── ru.json           # Russian (default)
+│   ├── en.json           # English
+│   └── uz.json           # Uzbek
+├── public/
+│   ├── images/           # Product photos, screenshots
+│   ├── videos/           # Demo videos
+│   └── lottie/           # Lottie animations
+└── next.config.ts
+```
+
+## 🚦 Getting Started
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Default language is Russian. Access other languages:
+- Russian: http://localhost:3000/ru
+- English: http://localhost:3000/en
+- Uzbek: http://localhost:3000/uz
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Build
 
-## Learn More
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📸 Adding Assets
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Images
+Place your product photos and screenshots in `public/images/`:
+- App screenshots (mockups)
+- Product photos
+- Logo files (SVG preferred)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Videos
+Place demo videos in `public/videos/`:
+- App demo video
+- Feature showcase videos
 
-## Deploy on Vercel
+### Lottie Animations
+Place Lottie JSON files in `public/lottie/`:
+- Icon animations
+- Loading animations
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌐 Internationalization
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Edit translation files in `messages/`:
+- `ru.json` - Russian
+- `en.json` - English
+- `uz.json` - Uzbek
+
+## 🎨 Customization
+
+### Colors
+Update colors in `tailwind.config.ts` or directly in components using Tailwind's utility classes.
+
+### Animations
+Modify Framer Motion animations in individual components:
+- `components/Hero/Hero.tsx`
+- `components/SwipeDemo/SwipeDemo.tsx`
+- etc.
+
+### Content
+All content is managed through translation files in `messages/`.
+
+## 📊 Sections
+
+1. **Hero** - Full-screen introduction with animated product cards
+2. **Problem Statement** - Highlight user pain points
+3. **Features** - 4 key features with icons
+4. **Swipe Demo** - Interactive card swiping
+5. **Visual Search Demo** - AI-powered search showcase
+6. **How It Works** - 5-step user journey
+7. **Stats** - Key metrics (search time, accuracy, etc.)
+8. **Waitlist** - Email collection form
+9. **Footer** - Links and social media
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+```bash
+npm install -g vercel
+vercel
+```
+
+### Azure
+
+Follow Azure Static Web Apps deployment guide for Next.js.
+
+### Other Platforms
+
+The app can be deployed to any platform supporting Next.js:
+- Netlify
+- AWS Amplify
+- Google Cloud Run
+- Docker
+
+## 📝 TODO
+
+- [ ] Add actual product images
+- [ ] Add demo video
+- [ ] Add logo SVG
+- [ ] Implement waitlist backend API
+- [ ] Add SEO metadata
+- [ ] Add analytics (Google Analytics, etc.)
+- [ ] Add cookie consent
+- [ ] Implement language switcher in navigation
+- [ ] Add social media meta tags (Open Graph, Twitter)
+
+## 🎯 Design Inspiration
+
+- **Apple** - Animations, hero videos, scroll effects
+- **Tinder** - Swipe demo, playful tone
+- **Sephora** - E-commerce layout, product grids
+- **DressCode.ai** - AI feature explanation
+- **TTLK** - Minimalist design, clean typography
+
+## 📄 License
+
+© 2025 Swipee. All rights reserved.
