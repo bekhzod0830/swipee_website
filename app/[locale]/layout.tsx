@@ -5,20 +5,20 @@ import type { Metadata } from 'next';
 import '../globals.css';
 
 export const metadata: Metadata = {
-  title: 'swipee - Discover Your Style',
+  title: 'SVΛYP - Discover Your Style',
   description: 'Find perfect outfits with AI-powered visual search and personalized recommendations',
-  metadataBase: new URL('https://swipee.net'),
+  metadataBase: new URL('https://svaypai.com'),
   openGraph: {
-    title: 'swipee - Discover Your Style',
+    title: 'SVΛYP - Discover Your Style',
     description: 'Find perfect outfits with AI-powered visual search and personalized recommendations',
-    url: 'https://swipee.net',
-    siteName: 'swipee',
+    url: 'https://svaypai.com',
+    siteName: 'SVΛYP',
     images: [
       {
         url: '/key_point_images/swipe_discovery.png',
         width: 1200,
         height: 630,
-        alt: 'swipee - AI-powered fashion discovery',
+        alt: 'SVΛYP - AI-powered fashion discovery',
       },
     ],
     locale: 'en_US',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'swipee - Discover Your Style',
+    title: 'SVΛYP - Discover Your Style',
     description: 'Find perfect outfits with AI-powered visual search and personalized recommendations',
     images: ['/key_point_images/swipe_discovery.png'],
   },

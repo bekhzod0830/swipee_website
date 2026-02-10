@@ -1,11 +1,11 @@
-# Swipee Website
+# SVΛYP Website
 
-A stunning, Apple-inspired landing page for the Swipee mobile application. Built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
+A stunning, Apple-inspired landing page for the SVΛYP mobile application. Built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
 
 ## 🚀 Features
 
 - **Apple-style animations** - Smooth scroll effects, parallax, and micro-interactions
-- **Interactive Swipe Demo** - Tinder-like card swiping experience
+- **Interactive Swipe Demo** - Card swiping experience
 - **Visual Search Demo** - AI-powered image search showcase
 - **Multi-language Support** - Russian (default), English, and Uzbek
 - **Fully Responsive** - Mobile-first design
@@ -23,7 +23,7 @@ A stunning, Apple-inspired landing page for the Swipee mobile application. Built
 ## 📁 Project Structure
 
 ```
-swipee_website/
+svayp_website/
 ├── app/
 │   ├── [locale]/           # Locale-based routing
 │   │   ├── layout.tsx
@@ -169,11 +169,10 @@ The app can be deployed to any platform supporting Next.js:
 ## 🎯 Design Inspiration
 
 - **Apple** - Animations, hero videos, scroll effects
-- **Tinder** - Swipe demo, playful tone
 - **Sephora** - E-commerce layout, product grids
 - **DressCode.ai** - AI feature explanation
 - **TTLK** - Minimalist design, clean typography
 
 ## 📄 License
 
-© 2025 Swipee. All rights reserved.
+© 2026 SVΛYP. All rights reserved.

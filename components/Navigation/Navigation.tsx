@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navigation() {
@@ -41,7 +42,9 @@ export default function Navigation() {
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center"
             >
-              <div className="text-2xl font-bold">swipee</div>
+              <div className="text-2xl font-bold text-black" style={{ letterSpacing: '0.15em' }}>
+                SVΛYP
+              </div>
             </motion.div>
           </Link>
 
@@ -60,6 +63,14 @@ export default function Navigation() {
               {t('howItWorks')}
             </a>
             <LanguageSwitcher />
+            <a
+              href="https://app.svaypai.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 bg-white text-black text-sm font-medium rounded-full border-2 border-black hover:bg-black hover:text-white transition-colors"
+            >
+              {t('login')}
+            </a>
             <a
               href="#waitlist"
               className="px-6 py-2.5 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
@@ -118,6 +129,15 @@ export default function Navigation() {
               <div className="py-2">
                 <LanguageSwitcher />
               </div>
+              <a
+                href="https://app.svaypai.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="px-6 py-3 bg-white text-black text-base font-medium rounded-full border-2 border-black hover:bg-black hover:text-white transition-colors text-center"
+              >
+                {t('login')}
+              </a>
               <a
                 href="#waitlist"
                 onClick={() => setIsMobileMenuOpen(false)}

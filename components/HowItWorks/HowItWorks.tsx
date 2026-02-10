@@ -12,19 +12,19 @@ export default function HowItWorks() {
   const steps = [
     { 
       key: 'step1',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=1200&fit=crop&auto=format', // Sign up - person with phone
+      image: '/images/how_it_works/sign up.jpeg', // Sign up - person with phone
     },
     { 
       key: 'step2',
-      image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&h=1200&fit=crop&auto=format', // Choose style - fashion selection
+      image: '/images/how_it_works/choose style.avif', // Choose style - fashion selection
     },
     { 
       key: 'step3',
-      image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&h=1200&fit=crop&auto=format', // Swipe products - woman shopping
+      image: '/images/how_it_works/swipe products.jpg', // Swipe products - woman shopping
     },
     { 
       key: 'step4',
-      image: 'https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=800&h=1200&fit=crop&auto=format', // AI search - phone camera/search
+      image: '/images/how_it_works/AI search.jpg', // AI search - phone camera/search
     },
   ];
 

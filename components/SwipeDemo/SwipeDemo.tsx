@@ -12,28 +12,28 @@ const MOCK_PRODUCTS = [
     name: 'Soft Academia', 
     price: '350 000 UZS', 
     image: '/swipe_demo/demo1.png',
-    brand: 'Swipee Collection'
+    brand: 'SVΛYP Collection'
   },
   { 
     id: 2, 
     name: 'Soft Street', 
     price: '599 000 UZS', 
     image: '/swipe_demo/demo2.png',
-    brand: 'Swipee Collection'
+    brand: 'SVΛYP Collection'
   },
   { 
     id: 3, 
     name: 'Denim Focus', 
     price: '780 000 UZS', 
     image: '/swipe_demo/demo3.png',
-    brand: 'Swipee Collection'
+    brand: 'SVΛYP Collection'
   },
   { 
     id: 4, 
     name: 'Desert Calm', 
     price: '679 000 UZS', 
     image: '/swipe_demo/demo4.png',
-    brand: 'Swipee Collection'
+    brand: 'SVΛYP Collection'
   },
 ];
 
@@ -229,7 +229,7 @@ export default function SwipeDemo() {
 
                   {/* App Header */}
                   <div className="px-6 py-3 flex items-center justify-center">
-                    <h1 className="text-xl font-bold text-black">swipee</h1>
+                    <h1 className="text-xl font-bold text-black">SVΛYP</h1>
                   </div>
                 </div>
 

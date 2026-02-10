@@ -2,7 +2,8 @@
   "nav": {
     "features": "Features",
     "howItWorks": "How It Works",
-    "waitlist": "Waitlist"
+    "waitlist": "Waitlist",
+    "login": "Login"
   },
   "hero": {
     "title": "Discover Your Style",
@@ -23,11 +24,11 @@
     "subtitle": "Technology that changes the game",
     "visualSearch": {
       "title": "AI Visual Search",
-      "description": "Upload a photo — find the exact item in 3-5 seconds with GPT-4 Vision"
+      "description": "Upload a photo — find the exact item in 3-5 seconds with AI"
     },
     "swipeDiscovery": {
       "title": "Swipe Discovery",
-      "description": "Swipe through products like Tinder — fun, fast, personalized"
+      "description": "Swipe through products — fun, fast, personalized"
     },
     "modestFashion": {
       "title": "Modest Fashion",
@@ -110,6 +111,6 @@
     "legal": "Legal",
     "privacy": "Privacy",
     "terms": "Terms",
-    "allRightsReserved": "© 2025 Swipee. All rights reserved."
+    "allRightsReserved": "© 2026 SVΛYP. All rights reserved."
   }
 }

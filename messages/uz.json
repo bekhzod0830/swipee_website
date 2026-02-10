@@ -2,7 +2,8 @@
   "nav": {
     "features": "Imkoniyatlar",
     "howItWorks": "Qanday Ishlaydi",
-    "waitlist": "Kutish Ro'yxati"
+    "waitlist": "Kutish Ro'yxati",
+    "login": "Kirish"
   },
   "hero": {
     "title": "O'z Stilingizni Kashf Eting",
@@ -23,11 +24,11 @@
     "subtitle": "O'yinni o'zgartiradigan texnologiya",
     "visualSearch": {
       "title": "AI Vizual Qidiruv",
-      "description": "Rasm yuklang — GPT-4 Vision yordamida 3-5 soniyada topib bering"
+      "description": "Rasm yuklang — AI yordamida 3-5 soniyada topib bering"
     },
     "swipeDiscovery": {
       "title": "Svayplab Kashf Eting",
-      "description": "Tinder kabi mahsulotlarni aylantiring — qiziqarli, tez, shaxsiy"
+      "description": "Mahsulotlarni aylantiring — qiziqarli, tez, shaxsiy"
     },
     "modestFashion": {
       "title": "Kamtarin Moda",
@@ -110,6 +111,6 @@
     "legal": "Huquqiy",
     "privacy": "Maxfiylik",
     "terms": "Shartlar",
-    "allRightsReserved": "© 2025 Swipee. Barcha huquqlar himoyalangan."
+    "allRightsReserved": "© 2026 SVΛYP. Barcha huquqlar himoyalangan."
   }
 }
